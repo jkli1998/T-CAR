@@ -95,7 +95,7 @@ You can download our training model (TCAR PredCls) from [this link]([model_00160
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 10006 --nproc_per_node=1 \
-        tools/relation_train_net.py \
+        tools/relation_test_net.py \
         --config-file "configs/e2e_relation_X_101_32_8_FPN_1x.yaml" \
         SOLVER.PRE_VAL False \
         MODEL.ROI_RELATION_HEAD.LAMBDA_ 0.01 \

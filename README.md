@@ -69,6 +69,7 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 10006 --
         tools/relation_train_net.py \
         --config-file "configs/e2e_relation_X_101_32_8_FPN_1x.yaml" \
         SOLVER.PRE_VAL False \
+        DATASETS.POST_NMS True \
         MODEL.ROI_RELATION_HEAD.LAMBDA_ 0.01 \
         MODEL.ROI_RELATION_HEAD.PRUNE_RATE 0.85 \
         MODEL.ROI_RELATION_HEAD.PREDICT_USE_BIAS False \
@@ -98,6 +99,7 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 10006 --
         tools/relation_test_net.py \
         --config-file "configs/e2e_relation_X_101_32_8_FPN_1x.yaml" \
         SOLVER.PRE_VAL False \
+        DATASETS.POST_NMS True \
         MODEL.ROI_RELATION_HEAD.LAMBDA_ 0.01 \
         MODEL.ROI_RELATION_HEAD.PRUNE_RATE 0.85 \
         MODEL.ROI_RELATION_HEAD.PREDICT_USE_BIAS False \
